@@ -15,7 +15,6 @@ class FirstViewController: UIViewController {
 	
 	let howManyGrids: Int
 	
-	
 	let battleEngine: BattleBrain
 	var loaded: Bool
 	let resetTitle = "Reset"
@@ -71,9 +70,7 @@ class FirstViewController: UIViewController {
 		if battleEngine.checkGrid(sender.tag - 1) {
 			gameLabel.text = "That was a hit!"
 			sender.backgroundColor = UIColor.red
-			//disableCardButtons()
-		}
-		else {
+		} else {
 			gameLabel.text = "Miss!"
 			sender.backgroundColor = UIColor.lightGray
 		}
