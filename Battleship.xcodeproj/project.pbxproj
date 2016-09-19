@@ -13,6 +13,10 @@
 		1ED8D7731D8CA082007FD4C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ED8D7711D8CA082007FD4C7 /* Main.storyboard */; };
 		1ED8D7751D8CA082007FD4C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ED8D7741D8CA082007FD4C7 /* Assets.xcassets */; };
 		1ED8D7781D8CA082007FD4C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ED8D7761D8CA082007FD4C7 /* LaunchScreen.storyboard */; };
+		9E63450F1D8DC3F0004E4A54 /* MontyBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E63450C1D8DC3F0004E4A54 /* MontyBrain.swift */; };
+		9E6345101D8DC3F0004E4A54 /* MontyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E63450D1D8DC3F0004E4A54 /* MontyViewController.swift */; };
+		9E6345111D8DC3F0004E4A54 /* NCardMontyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E63450E1D8DC3F0004E4A54 /* NCardMontyViewController.swift */; };
+		9E6345131D8DCB89004E4A54 /* BattleBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6345121D8DCB89004E4A54 /* BattleBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		1ED8D7741D8CA082007FD4C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1ED8D7771D8CA082007FD4C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1ED8D7791D8CA082007FD4C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E63450C1D8DC3F0004E4A54 /* MontyBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MontyBrain.swift; sourceTree = "<group>"; };
+		9E63450D1D8DC3F0004E4A54 /* MontyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MontyViewController.swift; sourceTree = "<group>"; };
+		9E63450E1D8DC3F0004E4A54 /* NCardMontyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCardMontyViewController.swift; sourceTree = "<group>"; };
+		9E6345121D8DCB89004E4A54 /* BattleBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,10 @@
 		1ED8D76A1D8CA082007FD4C7 /* Battleship */ = {
 			isa = PBXGroup;
 			children = (
+				9E63450C1D8DC3F0004E4A54 /* MontyBrain.swift */,
+				9E63450D1D8DC3F0004E4A54 /* MontyViewController.swift */,
+				9E6345121D8DCB89004E4A54 /* BattleBrain.swift */,
+				9E63450E1D8DC3F0004E4A54 /* NCardMontyViewController.swift */,
 				1ED8D76B1D8CA082007FD4C7 /* AppDelegate.swift */,
 				1ED8D76D1D8CA082007FD4C7 /* FirstViewController.swift */,
 				1ED8D76F1D8CA082007FD4C7 /* SecondViewController.swift */,
@@ -140,8 +152,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ED8D7701D8CA082007FD4C7 /* SecondViewController.swift in Sources */,
+				9E6345101D8DC3F0004E4A54 /* MontyViewController.swift in Sources */,
 				1ED8D76C1D8CA082007FD4C7 /* AppDelegate.swift in Sources */,
+				9E63450F1D8DC3F0004E4A54 /* MontyBrain.swift in Sources */,
+				9E6345131D8DCB89004E4A54 /* BattleBrain.swift in Sources */,
 				1ED8D76E1D8CA082007FD4C7 /* FirstViewController.swift in Sources */,
+				9E6345111D8DC3F0004E4A54 /* NCardMontyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +319,7 @@
 				1ED8D77E1D8CA082007FD4C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
