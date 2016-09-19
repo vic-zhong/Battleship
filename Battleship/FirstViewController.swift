@@ -36,7 +36,7 @@ class FirstViewController: UIViewController {
 			setUpGameButtons(v: buttonContainer, totalButtons: self.howManyGrids, buttonsPerRow: 10)
 			self.view.setNeedsDisplay()
 			setUpResetButton()
-			battleEngine.placeShip(ship: battleEngine.shipsArray)
+			battleEngine.placeShip(ships: battleEngine.shipsArray)
 		}
 		loaded = true
 	}
@@ -53,6 +53,7 @@ class FirstViewController: UIViewController {
 	func handleReset() {
 		resetButtonColors()
 		battleEngine.setupGrids()
+		battleEngine.placeShip(ships: battleEngine.shipsArray)
 		setUpGameLabel()
 	}
 	
@@ -74,7 +75,7 @@ class FirstViewController: UIViewController {
 		}
 		else {
 			gameLabel.text = "Miss!"
-			sender.backgroundColor = UIColor.white
+			sender.backgroundColor = UIColor.lightGray
 		}
 	}
 	

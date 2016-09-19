@@ -8,6 +8,8 @@
 
 import Foundation
 
+// I am not sure why the placeShip() sometimes outputs a string with more than the expected 17 characters
+
 class BattleBrain {
 	let gridSize: Int
 	let shipsArray = [5, 4, 3, 3, 2] // The allocation of hitpoints per ship, represented as index value
@@ -22,20 +24,15 @@ class BattleBrain {
 		case miss
 	}
 	
-	
-	
 	private var grids = [State]()
 	
-	func placeShip(ship: [Int]) {
-		for x in ship {
-			checkGrid(gridHealth: x)
+	func placeShip(ships: [Int]) {
+		holdArray = []
+		for ship in ships {
+			checkGrid(gridHealth: ship)
 		}
 		activateShipPositions()
 		print(holdArray)
-	}
-	
-	func resetCheck(gridHealth: Int) {
-	checkGrid(gridHealth: gridHealth)
 	}
 	
 	func checkGrid(gridHealth: Int) {
@@ -45,32 +42,31 @@ class BattleBrain {
 		if directionSense == 0 { //horizontal placement and position checking
 			let boundsCheck = (Int(tempRandom) % 10) + gridHealth
 			if boundsCheck > 10 || tempRandom % 10 == 0 {
-				resetCheck(gridHealth: gridHealth)
-			}
-			else {
+				checkGrid(gridHealth: gridHealth)
+				return
+			} else {
 				for x in 0..<gridHealth {
 					for all in holdArray {
 						if Int(tempRandom) + x == all {
-							tempArray = []
-							resetCheck(gridHealth: gridHealth)
+							checkGrid(gridHealth: gridHealth)
+							return
 						}
 					}
 					tempArray.append(Int(tempRandom) + x)
 				}
 				holdArray.append(contentsOf: tempArray)
 			}
-		}
-		else { // vertical placement and position checking
+		} else { // vertical placement and position checking
 			let boundsCheck = Int(tempRandom) + (gridHealth*10)
 			if boundsCheck > 100 {
-				resetCheck(gridHealth: gridHealth)
-			}
-			else {
+				checkGrid(gridHealth: gridHealth)
+				return
+			} else {
 				for x in 0..<gridHealth {
 					for all in holdArray {
 						if (Int(tempRandom) + (x * 10)) == all {
-							tempArray = []
-							resetCheck(gridHealth: gridHealth)
+							checkGrid(gridHealth: gridHealth)
+							return
 						}
 					}
 					tempArray.append(Int(tempRandom) + (x * 10))
@@ -79,17 +75,15 @@ class BattleBrain {
 			}
 		}
 	}
-
+	
 	func activateShipPositions() {
 		for all in holdArray {
-		grids[all-1] = .hitable
+			grids[all-1] = .hitable
 		}
 	}
-
+	
 	func setupGrids(){
 		grids = Array(repeating: .miss, count: gridSize)
-		//grids[Int(arc4random_uniform(UInt32(gridSize)))] = .hitable
-		
 	}
 	
 	func checkGrid(_ gridIn: Int) -> Bool{
